@@ -62,4 +62,11 @@ defmodule Typeform.Client.Test do
     end
   end
 
+  test "retrieve the form render url" do
+    use_cassette "show_form", custom: true do
+      form_url = Client.form_render_url("hJ4tEqGWXF0qzr")
+      assert form_url == "http://test.lvh.me/latest/forms/keEwsGeuC"
+    end
+  end
+
 end

@@ -5,4 +5,5 @@ defmodule Typeform.ClientLink do
   def build(data) do
     Map.merge(%Typeform.ClientLink{}, %{rel: data["rel"], href: data["href"]})
   end
+
 end

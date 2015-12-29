@@ -1,0 +1,41 @@
+[
+  {
+    "request": {
+      "url": "http://test.lvh.me/latest/forms/hJ4tEqGWXF0qzr"
+    },
+    "response": {
+      "status_code": 200,
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body":"{
+          \"id\": \"keEwsGeuC\",
+          \"title\": \"My first typeform\",
+          \"tags\": [\"test1\", \"test2\"],
+          \"fields\": [
+            {
+              \"type\": \"short_text\",
+              \"question\": \"What is your name?\"
+            }
+          ],
+          \"urls\": [
+            {
+              \"id\": \"hJ4tEqGWXF0qzr\",
+              \"form_id\": \"n6Lmrmbebh\",
+              \"version\": \"v0.4\"
+            }
+          ],
+          \"_links\": [
+            {
+              \"rel\": \"self\",
+              \"href\": \"http://test.lvh.me/latest/forms/keEwsGeuC\"
+            },
+            {
+              \"rel\": \"form_render\",
+              \"href\": \"http://test.lvh.me/latest/forms/keEwsGeuC\"
+            }
+          ]
+      }"
+    }
+  }
+]
