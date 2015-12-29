@@ -1,0 +1,33 @@
+[
+  {
+    "request": {
+      "url": "http://test.lvh.me/latest/forms"
+    },
+    "response": {
+      "status_code": 200,
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body":"{
+          \"id\": \"keEwsGeuC\",
+          \"title\": \"My first typeform\",
+          \"fields\": [
+            {
+              \"type\": \"short_text\",
+              \"question\": \"What is your name?\"
+            }
+          ],
+          \"_links\": [
+            {
+              \"rel\": \"self\",
+              \"href\": \"https://api.typeform.io/latest/forms/keEwsGeuC\"
+            },
+            {
+              \"rel\": \"form_render\",
+              \"href\": \"https://forms.typeform.io/to/keEwsGeuC\"
+            }
+          ]
+      }"
+    }
+  }
+]

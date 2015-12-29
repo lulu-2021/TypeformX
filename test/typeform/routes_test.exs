@@ -14,6 +14,11 @@ defmodule Typeform.Routes.Test do
     assert information_route == "#{base_url}/#{@base_version}"
   end
 
+  test "create form route", %{base_url: base_url} do
+    create_form_route = Routes.route(:create_form)
+    assert create_form_route == "#{base_url}/#{@base_version}/forms"
+  end
+
   test "show form route", %{base_url: base_url} do
     show_form_id = 1
     show_form_route = Routes.route(:show_form, form_id: show_form_id)
