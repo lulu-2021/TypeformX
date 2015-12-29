@@ -7,7 +7,12 @@ defmodule Typeformx.Mixfile do
      elixir: "~> 1.1",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
-     deps: deps]
+     deps: deps,
+     package: package,
+     description: """
+     An Elixir client library for the Typeform API (typeform.io)
+     """
+   ]
   end
 
   # Configuration for the OTP application
@@ -15,6 +20,16 @@ defmodule Typeformx.Mixfile do
   # Type "mix help compile.app" for more information
   def application do
     [applications: [:logger, :httpoison]]
+  end
+
+  # Package information
+  defp package do
+    [
+      files: ["lib", "mix.exs", "README", "LICENSE*"],
+      maintainers: ["Steve Forkin"],
+      licenses: ["Apache 2.0"],
+      links: %{"GitHub" => "https://github.com/netflakes/TypeformX"}
+    ]
   end
 
   # Dependencies can be Hex packages:
