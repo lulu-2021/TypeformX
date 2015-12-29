@@ -1,4 +1,8 @@
 defmodule Typeform.Routes do
+  @moduledoc """
+    ** Summary **
+    module to encapsulate the routes wrapped for the TypeForm API
+  """
 
   @base_version "latest"
 

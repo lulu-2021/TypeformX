@@ -1,4 +1,8 @@
 defmodule Typeform.Client do
+  @moduledoc """
+    ** Summary **
+    module to encapsulate the functions wrapped for the TypeForm API - creating and retrieving form data
+  """
 
   use HTTPoison.Base
   alias Typeform.Routes

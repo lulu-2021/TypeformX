@@ -30,7 +30,9 @@ defmodule Typeformx.Mixfile do
     [
       {:exvcr, "~> 0.3.2", only: :test},
       {:httpoison, "~> 0.8.0"},
-      {:poison, "~> 1.5"}
+      {:poison, "~> 1.5"},
+      {:dogma, "~> 0.0", only: [:dev, :test]},
+      {:credo, "~> 0.1.9", only: [:dev, :test]}
     ]
   end
 end

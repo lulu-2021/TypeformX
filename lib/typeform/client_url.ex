@@ -1,4 +1,9 @@
 defmodule Typeform.ClientUrl do
+  @moduledoc """
+    ** Summary **
+    module contains the struct for the Client Url data from the API
+  """
+
   @derive [Poison.Encoder]
   defstruct [:id, :form_id, :version]
 

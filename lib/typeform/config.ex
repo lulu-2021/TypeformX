@@ -1,4 +1,9 @@
 defmodule Typeform.Config do
+  @moduledoc """
+    ** Summary **
+    module to encapsulate the configuration variables used such as the host and api key
+  """
+
   use Mix.Config
 
   def secret, do: typeform_secret(Mix.env)
