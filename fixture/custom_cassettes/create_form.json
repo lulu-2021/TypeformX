@@ -11,10 +11,18 @@
       "body":"{
           \"id\": \"keEwsGeuC\",
           \"title\": \"My first typeform\",
+          \"tags\": [\"test1\", \"test2\"],
           \"fields\": [
             {
               \"type\": \"short_text\",
               \"question\": \"What is your name?\"
+            }
+          ],
+          \"urls\": [
+            {
+              \"id\": \"hJ4tEqGWXF0qzr\",
+              \"form_id\": \"BRSgoNH6vdLBZw\",
+              \"version\": \"v0.4\"
             }
           ],
           \"_links\": [

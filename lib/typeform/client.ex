@@ -16,7 +16,7 @@ defmodule Typeform.Client do
     route
     |> post_request(payload)
     |> response_body
-    |> Poison.decode!(as: Typeform.ClientForm)    
+    |> Poison.decode!(as: Typeform.ClientFormResponse)
   end
 
   defp response_body(response) do
