@@ -14,7 +14,7 @@ defmodule Typeformx.Mixfile do
   #
   # Type "mix help compile.app" for more information
   def application do
-    [applications: [:logger]]
+    [applications: [:logger, :httpoison]]
   end
 
   # Dependencies can be Hex packages:
@@ -27,6 +27,10 @@ defmodule Typeformx.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    []
+    [
+      {:exvcr, "~> 0.3.2", only: :test},
+      {:httpoison, "~> 0.8.0"},
+      {:poison, "~> 1.5"}
+    ]
   end
 end

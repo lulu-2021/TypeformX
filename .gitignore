@@ -3,3 +3,6 @@
 /deps
 erl_crash.dump
 *.ez
+
+# - ignore the twitter & facebook & encryption secrets 
+/config/typeform_secrets.exs

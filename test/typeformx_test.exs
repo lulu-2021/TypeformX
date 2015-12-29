@@ -1,8 +1,5 @@
-defmodule TypeformxTest do
-  use ExUnit.Case
-  doctest Typeformx
+defmodule Typeformx.Config.Test do
+  use Mix.Config
 
-  test "the truth" do
-    assert 1 + 1 == 2
-  end
+  config :typeformx, secret: "test_api_secret"
 end

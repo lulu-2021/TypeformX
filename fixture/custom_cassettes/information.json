@@ -1,0 +1,21 @@
+[
+  {
+    "request": {
+      "url": "http://test.lvh.me/latest"
+    },
+    "response": {
+      "status_code": 200,
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body":"{
+        \"description\":\"Build API for creating forms awesomely\",
+        \"documentation\":\"https://docs.typeform.io/\",
+        \"name\":\"Typeform I/O Build API\",
+        \"support\":\"support@typeform.io\",
+        \"time\":\"2015-12-29 02:19:13.13980723 +0000 UTC\",
+        \"version\":\"v0.4\"
+      }"
+    }
+  }
+]
