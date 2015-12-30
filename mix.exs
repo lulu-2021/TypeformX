@@ -7,6 +7,7 @@ defmodule Typeformx.Mixfile do
      elixir: "~> 1.1",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
+     test_coverage: [tool: ExCoveralls],
      deps: deps,
      package: package,
      description: """
@@ -21,6 +22,8 @@ defmodule Typeformx.Mixfile do
   def application do
     [applications: [:logger, :httpoison]]
   end
+
+
 
   # Package information
   defp package do
@@ -45,6 +48,7 @@ defmodule Typeformx.Mixfile do
     [
       {:httpoison, "~> 0.8.0"},
       {:poison, "~> 1.5"},
+      {:excoveralls, "~> 0.4", only: :test},
       {:earmark, ">= 0.0.0", only: [:dev, :test]},
       {:ex_doc, "~> 0.11", only: [:dev, :test]},
       {:exvcr, "~> 0.3.2", only: [:dev, :test]},
