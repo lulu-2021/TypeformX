@@ -22,22 +22,6 @@ defmodule Typeform.Client do
 
   @doc """
     creates a typeform form from a json payload - expects the input to be a json formatted string
-
-    iex> Typeform.Client.create_form(
-      "
-      {
-        \"title\": \"My new Typeform\",
-        \"tags\": [\"first-forms\"],
-        \"webhook_submit_url\": \"http://example.com/webhook\",
-        \"fields\": [
-          {
-            \"type\": \"short_text\",
-            \"question\": \"How is the weather down in Barcelona today?\"
-          }
-        ]
-      }
-      "
-    )
   """
   def create_form(payload) do
     route = Routes.route(:create_form)
@@ -47,6 +31,9 @@ defmodule Typeform.Client do
     |> Poison.decode!(as: Typeform.ClientFormResponse)
   end
 
+  @doc """
+    retrieves a typeform form by it's id
+  """
   def show_form(id) do
     route = Routes.route(:show_form, form_id: id)
     route
@@ -55,6 +42,9 @@ defmodule Typeform.Client do
     |> Poison.decode!(as: Typeform.ClientFormResponse)
   end
 
+  @doc """
+    retrieves the external url to the form by it's id
+  """
   def form_render_url(id) do
     form_data = form_url(id)
     form_data
