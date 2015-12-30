@@ -4,7 +4,7 @@ use Mix.Config
 import_config "typeform_secrets.exs"
 
 config :dogma,
-  rule_set: Dogma.RuleSet.All,
+  rule_set: Typeform.DogDogmaTestRuleset,
 
   exclude: [
     ~r(\Alib/vendor/),
