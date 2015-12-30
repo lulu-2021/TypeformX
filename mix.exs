@@ -43,9 +43,11 @@ defmodule Typeformx.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [
-      {:exvcr, "~> 0.3.2", only: :test},
       {:httpoison, "~> 0.8.0"},
       {:poison, "~> 1.5"},
+      {:earmark, ">= 0.0.0", only: :dev},
+      {:ex_doc, "~> 0.11", only: :dev},
+      {:exvcr, "~> 0.3.2", only: :test},
       {:dogma, "~> 0.0", only: [:dev, :test]},
       {:credo, "~> 0.1.9", only: [:dev, :test]}
     ]

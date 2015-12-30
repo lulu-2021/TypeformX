@@ -7,6 +7,11 @@ defmodule Typeform.Client do
   use HTTPoison.Base
   alias Typeform.Routes
 
+  @doc """
+    retrieves basic api information that helps to confirm that authentication has occurred correctly
+
+    iex> Typeform.Client.information
+  """
   def information do
     route = Routes.route(:information)
     route
@@ -15,6 +20,25 @@ defmodule Typeform.Client do
     |> Poison.decode!(as: Typeform.ClientInformation)
   end
 
+  @doc """
+    creates a typeform form from a json payload - expects the input to be a json formatted string
+
+    iex> Typeform.Client.create_form(
+      "
+      {
+        \"title\": \"My new Typeform\",
+        \"tags\": [\"first-forms\"],
+        \"webhook_submit_url\": \"http://example.com/webhook\",
+        \"fields\": [
+          {
+            \"type\": \"short_text\",
+            \"question\": \"How is the weather down in Barcelona today?\"
+          }
+        ]
+      }
+      "
+    )
+  """
   def create_form(payload) do
     route = Routes.route(:create_form)
     route
