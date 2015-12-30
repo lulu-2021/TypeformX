@@ -45,9 +45,9 @@ defmodule Typeformx.Mixfile do
     [
       {:httpoison, "~> 0.8.0"},
       {:poison, "~> 1.5"},
-      {:earmark, ">= 0.0.0", only: :dev},
-      {:ex_doc, "~> 0.11", only: :dev},
-      {:exvcr, "~> 0.3.2", only: :test},
+      {:earmark, ">= 0.0.0", only: [:dev, :test]},
+      {:ex_doc, "~> 0.11", only: [:dev, :test]},
+      {:exvcr, "~> 0.3.2", only: [:dev, :test]},
       {:dogma, "~> 0.0", only: [:dev, :test]},
       {:credo, "~> 0.1.9", only: [:dev, :test]}
     ]
