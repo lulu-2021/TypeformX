@@ -2,6 +2,8 @@
 
 [![Build Status](https://semaphoreci.com/api/v1/projects/5b5cbac3-9d62-4e5b-8d1e-65b08ac491bc/647079/badge.svg)](https://semaphoreci.com/sforkin/typeformx)
 
+[![Coverage Status](https://coveralls.io/repos/netflakes/TypeformX/badge.svg?branch=master&service=github)](https://coveralls.io/github/netflakes/TypeformX?branch=master)
+
 An Elixir client library for the Typeform API (http://typeform.io)
 
 ## Using
