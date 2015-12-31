@@ -5,7 +5,7 @@ otp_release:
   - 18.0
 
 before_install:
-  - copy config/typeform_secrets.exs.example config/typeform_secrets.exs
+  - cp config/typeform_secrets.exs.example config/typeform_secrets.exs
   - git clone https://github.com/elixir-lang/elixir
   - cd elixir && make && cd ..
 before_script: 
