@@ -48,7 +48,7 @@ defmodule Typeformx.Mixfile do
     [
       {:httpoison, "~> 0.8.0"},
       {:poison, "~> 1.5"},
-      {:inch_ex, only: :docs},
+      {:inch_ex, only: [:dev, :test]},
       {:excoveralls, "~> 0.4", only: [:dev, :test]},
       {:earmark, ">= 0.0.0", only: [:dev, :test]},
       {:ex_doc, "~> 0.11", only: [:dev, :test]},

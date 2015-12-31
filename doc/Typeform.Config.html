@@ -93,11 +93,17 @@
     <a href="#host/0">host()</a>
   </div>
   
+    <div class="summary-synopsis"><p>based on the Mix.env param - retrieve the typeform host</p>
+</div>
+  
 </div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="#secret/0">secret()</a>
   </div>
+  
+    <div class="summary-synopsis"><p>based on the Mix.env param - retrieve the typeform api_key/secret</p>
+</div>
   
 </div>
 
@@ -131,7 +137,10 @@
   </div>
   
   <section class="docstring">
-    
+    <p>  based on the Mix.env param - retrieve the typeform host</p>
+<p>  iex&gt; Typeform.Config.host “Test”
+  “<a href="http://test.lvh.me">http://test.lvh.me</a>”</p>
+
   </section>
 </div>
 <div class="detail" id="secret/0">
@@ -144,7 +153,10 @@
   </div>
   
   <section class="docstring">
-    
+    <p>  based on the Mix.env param - retrieve the typeform api_key/secret</p>
+<p>  iex&gt; Typeform.Config.secret “Test”
+  “test<em>api<em>key_</em></em>”</p>
+
   </section>
 </div>
 

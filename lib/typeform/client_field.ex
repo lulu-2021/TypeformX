@@ -9,13 +9,21 @@ defmodule Typeform.ClientField do
   @field_types [:short_text, :long_text, :multiple_choice, :picture_choice, :statement, :dropdown, :yes_no,
                 :number, :rating, :opinion_scale, :email, :website, :legal]
 
-  # at compile time we dynamically create a function matching each type
   @field_types |> Enum.each(fn(ftype) ->
+    @doc """
+      at compile time we dynamically create a function matching each type
+    """
     def valid_field?(unquote(ftype)), do: true
   end)
-  # and one to catch all other cases..
+
+  @doc """
+    and one to catch all other cases..
+  """
   def valid_field?(_invalid_field), do: false
 
+  @doc """
+    builds a ClientField struct based on a map that has the correct variables
+  """
   def build(data) do
     question_type = data["type"]
     question_data = data["question"]

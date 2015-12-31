@@ -93,11 +93,17 @@
     <a href="#route/1">route(atom)</a>
   </div>
   
+    <div class="summary-synopsis"><p>retrieve route for creating a typform by passing <code class="inline">:create_form</code></p>
+</div>
+  
 </div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="#route/2">route(atom, list)</a>
   </div>
+  
+    <div class="summary-synopsis"><p>retrieve route for showing a typeform by passing <code class="inline">:show_form</code> and the <code class="inline">id</code></p>
+</div>
   
 </div>
 
@@ -130,8 +136,22 @@
       
   </div>
   
+    <div class="specs">
+      <h4 class="specs-title">Specs</h4>
+      <div class="specs-list">
+        
+          <pre><code class="elixir">route(:create_form) :: <a href="http://elixir-lang.org/docs/stable/elixir/String.html#t:t/0">String.t</a></code></pre>
+        
+          <pre><code class="elixir">route(:information) :: <a href="http://elixir-lang.org/docs/stable/elixir/String.html#t:t/0">String.t</a></code></pre>
+        
+      </div>
+    </div>
+  
   <section class="docstring">
-    
+    <p>  retrieve route for creating a typform by passing <code class="inline">:create_form</code></p>
+<p>  iex&gt; Typeform.Routes.route(:create_form)
+  “<a href="https://api.typeform.io/latest/forms">https://api.typeform.io/latest/forms</a>”</p>
+
   </section>
 </div>
 <div class="detail" id="route/2">
@@ -143,8 +163,20 @@
       
   </div>
   
+    <div class="specs">
+      <h4 class="specs-title">Specs</h4>
+      <div class="specs-list">
+        
+          <pre><code class="elixir">route(:show_form, [{:form_id, <a href="http://elixir-lang.org/docs/stable/elixir/String.html#t:t/0">String.t</a>}]) :: <a href="http://elixir-lang.org/docs/stable/elixir/String.html#t:t/0">String.t</a></code></pre>
+        
+      </div>
+    </div>
+  
   <section class="docstring">
-    
+    <p>  retrieve route for showing a typeform by passing <code class="inline">:show_form</code> and the <code class="inline">id</code></p>
+<p>  iex&gt; Typeform.Routes.route(:show_form, “ade4thgky”)
+  “<a href="https://api.typeform.io/latest/forms/ade4thgky">https://api.typeform.io/latest/forms/ade4thgky</a>”</p>
+
   </section>
 </div>
 
