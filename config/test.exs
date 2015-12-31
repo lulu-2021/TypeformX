@@ -1,7 +1,8 @@
 use Mix.Config
 
 # Typeform configuration
-import_config "typeform_secrets.exs"
+
+import_config "typeform_secrets_test.exs"
 
 config :dogma,
   rule_set: Typeform.DogmaTestRuleset,
