@@ -6,20 +6,20 @@ defmodule Typeform.Config do
 
   use Mix.Config
 
-  @doc """
-    based on the Mix.env param - retrieve the typeform api_key/secret
+  @doc ~S"""
+    based on the `Mix.env` param - retrieve the typeform api_key/secret
 
-    iex> Typeform.Config.secret "Test"
-    "test_api_key___"
+      iex> Typeform.Config.secret "Test"
+      "test_api_key___"
 
   """
   def secret, do: typeform_secret(Mix.env)
 
-  @doc """
-    based on the Mix.env param - retrieve the typeform host
+  @doc ~S"""
+    based on the `Mix.env` param - retrieve the typeform host
 
-    iex> Typeform.Config.host "Test"
-    "http://test.lvh.me"
+      iex> Typeform.Config.host "Test"
+      "http://test.lvh.me"
 
   """
   def host, do: typeform_host(Mix.env)
