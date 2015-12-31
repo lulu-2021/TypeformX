@@ -5,11 +5,11 @@ otp_release:
   - 18.0
 
 before_install:
+  - copy config/typeform_secrets.exs.example config/typeform_secrets.exs
   - git clone https://github.com/elixir-lang/elixir
   - cd elixir && make && cd ..
 before_script: 
   - export PATH=`pwd`/elixir/bin:$PATH
-  - copy config/typeform_secrets.exs.example config/typeform_secrets.exs
 
 script:
   - "MIX_ENV=test mix do deps.get, compile, coveralls.travis"
