@@ -25,13 +25,14 @@ defmodule Typeform.ClientOpinionScaleField.Test do
   end
 
   test "question with an opinion scale" do
-    labels = %{"left" => "bad", "center" => "ok", "right" => "good"}
+    {left, center, right} = {"bad", "ok", "good"}
+    labels = %{"left" => left, "center" => center, "right" => right}
     question = %{"question" => "", "type" => "opinion_scale", "labels" => labels, "steps" => 9}
     opinion_scale_field = ClientOpinionScaleField.build(question)
 
-    assert opinion_scale_field.labels["left"] == "bad"
-    assert opinion_scale_field.labels["center"] == "ok"
-    assert opinion_scale_field.labels["right"] == "good"
+    assert opinion_scale_field.labels["left"] == left
+    assert opinion_scale_field.labels["center"] == center
+    assert opinion_scale_field.labels["right"] == right
   end
 
 

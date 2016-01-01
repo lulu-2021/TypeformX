@@ -38,7 +38,7 @@ defmodule Typeform.ClientOpinionScaleField do
             question: question_data,
             labels: labels,
             steps: number_of_steps,
-            required: start_at_one_option,
+            start_at_one: start_at_one_option,
           }
         )
       true ->
