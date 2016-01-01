@@ -57,7 +57,7 @@ defmodule Typeform.ClientField do
             type: question_type,
             question: question_data,
             description: description_data,
-            required_option: required_option
+            required: required_option
           }
         )
       true ->

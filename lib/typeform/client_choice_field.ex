@@ -51,7 +51,7 @@ defmodule Typeform.ClientChoiceField do
             question: question_data,
             description: description_data,
             choices: choices_list,
-            required_option: required_option,
+            required: required_option,
             allow_multiple_selections: multiple_choice_option,
             randomize: randomize_option,
             vertical_alignment: alignment_option
