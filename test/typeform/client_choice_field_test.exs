@@ -27,4 +27,19 @@ defmodule Typeform.ClientChoiceField.Test do
     assert build_response == {:error, "Invalid Question Type"}
   end
 
+  test "question with a list of choices" do
+    choice1 = %{"label" => "male"}
+    choice2 = %{"label" => "female"}
+    choice3 = %{"label" => "not-stated"}
+    question = %{"question" => "", "type" => "multiple_choice", "choices" => [choice1, choice2, choice3]}
+    choice_field = ClientChoiceField.build(question)
+
+    result = choice_field.choices
+    |> Enum.map(fn(choice) ->
+      %{"label" => choice_value} = choice
+      choice_value
+    end)
+    assert result == ["male","female","not-stated"]
+  end
+
 end
