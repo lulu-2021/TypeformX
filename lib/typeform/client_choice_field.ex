@@ -8,7 +8,7 @@ defmodule Typeform.ClientChoiceField do
 
   @doc false
   @derive [Poison.Encoder]
-  defstruct [:type, :question, :description, :required, :choices]
+  defstruct [:type, :question, :description, :required, :choices, :allow_multiple_selections, :randomize, :vertical_alignment]
 
   @field_types [:multiple_choice, :picture_choice, :dropdown]
 
@@ -38,8 +38,11 @@ defmodule Typeform.ClientChoiceField do
     question_type = data["type"]
     question_data = data["question"]
     description_data = data["description"]
-    required_option = data["required"] || false
     choices_list = data["choices"] || []
+    multiple_choice_option = data["allow_multiple_selections"] || false
+    randomize_option = data["randomize"] || false
+    required_option = data["required"] || false
+    alignment_option = data["vertical_alignment"] || false
     cond do
       FieldValidator.valid?(question_type, &valid_field?(&1)) ->
         Map.merge(%Typeform.ClientChoiceField{},
@@ -47,8 +50,11 @@ defmodule Typeform.ClientChoiceField do
             type: question_type,
             question: question_data,
             description: description_data,
+            choices: choices_list,
             required_option: required_option,
-            choices: choices_list
+            allow_multiple_selections: multiple_choice_option,
+            randomize: randomize_option,
+            vertical_alignment: alignment_option
           }
         )
       true ->
