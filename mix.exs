@@ -8,8 +8,8 @@ defmodule Typeformx.Mixfile do
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      test_coverage: [tool: ExCoveralls],
-     deps: deps,
-     package: package,
+     deps: deps(),
+     package: package(),
      description: """
      An Elixir client library for the Typeform API (typeform.io)
      """
@@ -46,15 +46,15 @@ defmodule Typeformx.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [
-      {:httpoison, "~> 0.8.0"},
-      {:poison, "~> 1.5"},
+      {:httpoison, ">= 1.1.1"},
+      {:poison, ">= 3.1.0"},
       {:inch_ex, only: [:dev, :test]},
-      {:excoveralls, "~> 0.4", only: [:dev, :test]},
-      {:earmark, ">= 0.0.0", only: [:dev, :test]},
-      {:ex_doc, "~> 0.11", only: [:dev, :test]},
-      {:exvcr, "~> 0.3.2", only: [:dev, :test]},
-      {:dogma, "~> 0.0", only: [:dev, :test]},
-      {:credo, "~> 0.1.9", only: [:dev, :test]}
+      {:excoveralls, only: [:dev, :test]},
+      {:earmark, only: [:dev, :test]},
+      {:ex_doc, only: [:dev, :test]},
+      {:exvcr, only: [:dev, :test]},
+      {:dogma, only: [:dev, :test]},
+      {:credo, only: [:dev, :test]}
     ]
   end
 end
