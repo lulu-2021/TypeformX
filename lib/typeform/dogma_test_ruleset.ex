@@ -5,6 +5,6 @@ defmodule Typeform.DogmaTestRuleset do
   @behaviour Dogma.RuleSet
 
   def rules do
-    Dogma.RuleSet.All.rules |> Dict.drop([WindowsLineEndings, FinalNewline])
+    Dogma.RuleSet.All.rules |> Keyword.drop([WindowsLineEndings, FinalNewline])
   end
 end

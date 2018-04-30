@@ -15,9 +15,9 @@ defmodule Typeform.Client do
   def information do
     route = Routes.route(:information)
     route
-    |> get_request
-    |> response_body
-    |> Poison.decode!(as: Typeform.ClientInformation)
+    |> get_request()
+    |> response_body()
+    |> Poison.decode!(as: %Typeform.ClientInformation{})
   end
 
   @doc """
@@ -27,8 +27,8 @@ defmodule Typeform.Client do
     route = Routes.route(:create_form)
     route
     |> post_request(payload)
-    |> response_body
-    |> Poison.decode!(as: Typeform.ClientFormResponse)
+    |> response_body()
+    |> Poison.decode!(as: %Typeform.ClientFormResponse{})
   end
 
   @doc """
@@ -38,8 +38,8 @@ defmodule Typeform.Client do
     route = Routes.route(:show_form, form_id: id)
     route
     |> get_request()
-    |> response_body
-    |> Poison.decode!(as: Typeform.ClientFormResponse)
+    |> response_body()
+    |> Poison.decode!(as: %Typeform.ClientFormResponse{})
   end
 
   @doc """
@@ -48,16 +48,19 @@ defmodule Typeform.Client do
   def form_render_url(id) do
     form_data = form_url(id)
     form_data
-    |> Enum.filter_map(fn(url) ->
+    |> Enum.filter(fn(url) ->
       %{"href" => url["href"], "rel" => "form_render"} == url
-    end, &(Map.get(&1, "href")))
+    end)
+    |> Enum.map(fn(item) ->
+      Map.get(item, "href")
+    end)
     |> List.first
   end
 
   defp form_url(id) do
     form_data = show_form(id)
     form_data
-    |> process_form_response
+    |> process_form_response()
   end
 
   defp process_form_response(form_data) do
@@ -70,9 +73,9 @@ defmodule Typeform.Client do
     response_data.body
   end
 
-  defp get_request(path), do: get(path, http_options)
+  defp get_request(path), do: get(path, http_options())
 
-  defp post_request(path, payload), do: post(path, payload, http_options)
+  defp post_request(path, payload), do: post(path, payload, http_options())
 
   defp http_options do
     %{"X-API-TOKEN" => Typeform.Config.secret}
